@@ -1,18 +1,16 @@
 {
   "chainId": 120,
   "validators": [
-    "0x8ed2bcb528cb9dd5ecdb42d7b17aa54effafe330",
-    "0x4ab961cd3486819b6c2f30dd10c702e2ce20c024",
-    "0x4138fd15176ac17668232d4b896b9e69beec0b63",
-    "0x736dcaefe5c757fd37076df58a029acd2ef649ef",
-    "0x7e6bc34eeed1bc87f748b6c42d8923312e7d9593"
+    "0xeb87030c98f5f4dda60a265704471f22f8568115",
+    "0x895a18389cc096b1953b96930a33880cc61915af",
+    "0xf33c9f64b904b242318eae8c8673619d8f066265"
   ],
   "systemTreasury": {
-    "0xb2c1f95256f0b24fbfe18c22cea19b939962311a": 9000,
-    "0xbf09f27c6202a70056257ccd38c9e3f715ae5633": 1000
+    "0xb59a1c9090bac380b73422816d49a8a5504ba72f": 9000,
+    "0x0caad28a4e14e88b4102f0c39cc29ceaadb77f64": 1000
   },
   "consensusParams": {
-    "activeValidatorsLength": 7,
+    "activeValidatorsLength": 25,
     "epochBlockInterval": 28800,
     "misdemeanorThreshold": 50,
     "felonyThreshold": 150,
@@ -22,15 +20,13 @@
     "minStakingAmount": "0xde0b6b3a7640000"
   },
   "initialStakes": {
-    "0x8ed2bcb528cb9dd5ecdb42d7b17aa54effafe330": "0x21E19E0C9BAB2400000",
-    "0x4ab961cd3486819b6c2f30dd10c702e2ce20c024": "0x21E19E0C9BAB2400000",
-    "0x4138fd15176ac17668232d4b896b9e69beec0b63": "0x21E19E0C9BAB2400000",
-    "0x736dcaefe5c757fd37076df58a029acd2ef649ef": "0x21E19E0C9BAB2400000",
-    "0x7e6bc34eeed1bc87f748b6c42d8923312e7d9593": "0x21E19E0C9BAB2400000"
+    "0xeb87030c98f5f4dda60a265704471f22f8568115": "0x21E19E0C9BAB2400000",
+    "0x895a18389cc096b1953b96930a33880cc61915af": "0x21E19E0C9BAB2400000",
+    "0xf33c9f64b904b242318eae8c8673619d8f066265": "0x21E19E0C9BAB2400000"
   },
   "votingPeriod": 60,
   "faucet": {
-    "0xb2c1f95256f0b24fbfe18c22cea19b939962311a": "0x152D02C7E14AF6800000",
-    "0x00eb054cf7517217c43311bebc840c67b166502c": "0x2DF458B2C635DCF55E00000"
+    "0xb59a1c9090bac380b73422816d49a8a5504ba72f": "0x152D02C7E14AF6800000",
+    "0xdac5cfbec790f40fbcd9983069c9a1283df8b368": "0x2DF458B2C635DCF55E00000"
   }
 }

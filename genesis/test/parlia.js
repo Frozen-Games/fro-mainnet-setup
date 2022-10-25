@@ -11,17 +11,19 @@ contract("Parlia", async (accounts) => {
   const [owner] = accounts
   it("can add or remove validator", async () => {
     const {parlia} = await newMockContract(owner);
-    assert.equal(await parlia.isValidator('0xb2c1f95256f0b24fbfe18c22cea19b939962311a'), false)
-    const res1 = await parlia.addValidator('0xb2c1f95256f0b24fbfe18c22cea19b939962311a')
-    assert.equal(res1.logs[0].event, 'ValidatorAdded')
-    assert.equal(res1.logs[0].args.validator, '0xb2c1f95256f0b24fbfe18c22cea19b939962311a')
-    assert.equal(await parlia.isValidator('0xb2c1f95256f0b24fbfe18c22cea19b939962311a'), true)
+    assert.equal(await parlia.isValidator('0x00A601f45688DbA8a070722073B015277cF36725'), false)
+    const res1 = await parlia.addValidator('0x00A601f45688DbA8a070722073B015277cF36725')
+    assert.equal(res1.logs[0].event, 'Delegated')
+    assert.equal(res1.logs[0].args.validator, '0x00A601f45688DbA8a070722073B015277cF36725')
+    assert.equal(res1.logs[1].event, 'ValidatorAdded')
+    assert.equal(res1.logs[1].args.validator, '0x00A601f45688DbA8a070722073B015277cF36725')
+    assert.equal(await parlia.isValidator('0x00A601f45688DbA8a070722073B015277cF36725'), true)
     const validators1 = await parlia.getValidators()
-    assert.deepEqual(validators1, ['0xb2c1f95256f0b24fbfe18c22cea19b939962311a'])
-    const res2 = await parlia.removeValidator('0xb2c1f95256f0b24fbfe18c22cea19b939962311a')
+    assert.deepEqual(validators1, ['0x00A601f45688DbA8a070722073B015277cF36725'])
+    const res2 = await parlia.removeValidator('0x00A601f45688DbA8a070722073B015277cF36725')
     assert.equal(res2.logs[0].event, 'ValidatorRemoved')
-    assert.equal(res2.logs[0].args.validator, '0xb2c1f95256f0b24fbfe18c22cea19b939962311a')
-    assert.equal(await parlia.isValidator('0xb2c1f95256f0b24fbfe18c22cea19b939962311a'), false)
+    assert.equal(res2.logs[0].args.validator, '0x00A601f45688DbA8a070722073B015277cF36725')
+    assert.equal(await parlia.isValidator('0x00A601f45688DbA8a070722073B015277cF36725'), false)
     const validators2 = await parlia.getValidators()
     assert.deepEqual(validators2, [])
   });

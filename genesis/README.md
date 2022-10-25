@@ -1,2 +1,2 @@
-FRO Genesis Config
+BAS Genesis Config
 ==================
