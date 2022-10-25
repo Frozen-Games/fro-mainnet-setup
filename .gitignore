@@ -1,0 +1,6 @@
+genesis.json
+.idea
+blockscout/postgres-data/
+datadir/
+keystore/
+genesis/password.txt
