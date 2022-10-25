@@ -30,12 +30,12 @@ You can check Makefile to choose the most interesting commands, but if you just 
 ```bash
 apt update
 apt install -y build-essential socat
-git clone https://github.com/Ankr-network/bas-devnet-setup bas --recursive
+git clone https://github.com/Frozen-Games/fro-mainnet-setup bas --recursive
 cd bas
 make install-docker
 make install-acme
 export CHAIN_ID=120
-export DOMAIN_NAME=dev-01.bas.ankr.com
+export DOMAIN_NAME=frozenchain.io
 make all
 ```
 
