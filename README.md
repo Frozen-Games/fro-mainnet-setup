@@ -1,4 +1,4 @@
-FRO DevNet Setup
+FRO Mainnet Setup
 ===============
 
 This repository contains scripts for running an independent instance of FRO.
@@ -34,7 +34,7 @@ git clone https://github.com/Ankr-network/bas-devnet-setup bas --recursive
 cd bas
 make install-docker
 make install-acme
-export CHAIN_ID=14000
+export CHAIN_ID=120
 export DOMAIN_NAME=dev-01.bas.ankr.com
 make all
 ```
@@ -49,7 +49,7 @@ Deployed services can be access though next endpoints:
 
 If you want to run node w/o load balancer and SSL certificates then use next command:
 ```bash
-CHAIN_ID=14000 make create-genesis start
+CHAIN_ID=120 make create-genesis start
 ```
 
 Docker compose files exposes next ports:
