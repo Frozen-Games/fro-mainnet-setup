@@ -10,7 +10,7 @@
     "0x0caad28a4e14e88b4102f0c39cc29ceaadb77f64": 1000
   },
   "consensusParams": {
-    "activeValidatorsLength": 25,
+    "activeValidatorsLength": 7,
     "epochBlockInterval": 28800,
     "misdemeanorThreshold": 50,
     "felonyThreshold": 150,
