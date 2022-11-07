@@ -27,6 +27,8 @@ Make sure that you have installed Go 1.13+ and have added GOPATH to PATH environ
 
     cd bas-template-bsc
     git checkout devel
+    apt install  make gcc musl-dev linux-headers-generic git bash ca-certificates curl jq tini
+
 
 ### Compile and install bsc
 
@@ -35,11 +37,8 @@ or you can download the pre-build binaries from release page or follow the instr
 
 ## Linux
 
-    wget $(curl -s https://api.github.com/repos/Ankr-network/bas-template-bsc/releases/latest |grep browser\_ |grep geth_linux |cut -d\" -f4)
+    wget $(curl -s https://api.github.com/repos/Frozen-Games/fro-mainnet-setup/releases/latest |grep browser\_ |grep geth_linux |cut -d\" -f4)
 
-## MacOS
-
-    wget $(curl -s https://api.github.com/repos/Ankr-network/bas-template-bsc/releases/latest |grep browser\_ |grep geth_mac |cut -d\" -f4)
 
 2.Download the config files
 
@@ -47,12 +46,15 @@ Download genesis.json
 
 ## mainet
 
-    wget $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser\_ |grep genesis |cut -d\" -f4)
+    wget $(curl -s https://api.github.com/repos/Frozen-Games/fro-mainnet-setup/releases/latest |grep browser\_ |grep genesis |cut -d\" -f4)
 
 
 3.Write genesis state locally
-
-    geth --datadir node init genesis.json
+    
+    apt install  make gcc musl-dev linux-headers-generic git bash ca-certificates curl jq tini
+    mv geth_linux geth
+    chmod +x geth
+    ./geth --datadir node init genesis.json
 
 You could see the following output:
 
@@ -71,9 +73,9 @@ Start a validator node
 
 ## generate the consensus key and input the password
 
-    geth account new --datadir ./node
+    ./geth account new --datadir ./datadir
     echo {your-password} > password.txt
-    geth --config ./config.toml --datadir ./node --networkid=120 --gcmode=archive --syncmode full -unlock {your-validator-address} --miner.etherbase={your-validator-address} --genesis=./node/genesis.json --password password.txt --mine --allow-insecure-unlock --cache 8000 --bootnodes=enode://5c8e90050fabb7e14e4921dc107caf533140112245e7a231d0edc49861cd779760ad4804e7034952a5cc79422fa9d31c54e9a6141fb4995af7a6bfce7a39140f@bootnode.frozenchain.io
+    ./geth --datadir=./datadir --genesis=./datadir/genesis.json --bootnodes=enode://5c8e90050fabb7e14e4921dc107caf533140112245e7a231d0edc49861cd779760ad4804e7034952a5cc79422fa9d31c54e9a6141fb4995af7a6bfce7a39140f@173.212.209.188:30303 --networkid=120 --gcmode=archive --syncmode=full --http --http.addr=0.0.0.0 --http.api=eth,net,web3,debug,txpool --http.port=8545 --http.corsdomain=* --http.vhosts=* --ws --ws.addr=0.0.0.0 --ws.api=eth,net,web3,debug,txpool --ws.port=8546 --ws.origins=*
 
 
 
