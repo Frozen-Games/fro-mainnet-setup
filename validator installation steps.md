@@ -67,8 +67,3 @@ Start a validator node
     mv genesis.json ./datadir
     ./geth --datadir=./datadir --genesis=./datadir/genesis.json --mine --password=./datadir/password.txt --allow-insecure-unlock --unlock={your validator address} --miner.etherbase={your validator address}  --bootnodes=enode://5c8e90050fabb7e14e4921dc107caf533140112245e7a231d0edc49861cd779760ad4804e7034952a5cc79422fa9d31c54e9a6141fb4995af7a6bfce7a39140f@173.212.209.188:30303 --networkid=120 --gcmode=archive --syncmode=full
 
-
-
-5.Monitor node status
-
-you can monitor the log from /datadir/bsc.log by default.
