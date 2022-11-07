@@ -43,6 +43,8 @@ or you can download the pre-build binaries from release page or follow the instr
 ## Linux
 
     wget $(curl -s https://api.github.com/repos/Frozen-Games/fro-mainnet-setup/releases/latest |grep browser\_ |grep geth_linux |cut -d\" -f4)
+    mv geth_linux geth
+    chmod +x geth
 
 
 3. Download the config files
@@ -52,10 +54,7 @@ Download genesis.json
 ## mainet
 
     wget $(curl -s https://api.github.com/repos/Frozen-Games/fro-mainnet-setup/releases/latest |grep browser\_ |grep genesis |cut -d\" -f4)
-    mv geth_linux geth
-    chmod +x geth
-
-
+    
 4. Start your fullnode
 
 Start a validator node
@@ -65,7 +64,7 @@ Start a validator node
     mkdir datadir
     ./geth account new --datadir ./datadir
     echo {your-password} > password.txt
-
+    mv genesis.json ./datadir
     ./geth --datadir=./datadir --genesis=./datadir/genesis.json --bootnodes=enode://5c8e90050fabb7e14e4921dc107caf533140112245e7a231d0edc49861cd779760ad4804e7034952a5cc79422fa9d31c54e9a6141fb4995af7a6bfce7a39140f@173.212.209.188:30303 --networkid=120 --gcmode=archive --syncmode=full --http --http.addr=0.0.0.0 --http.api=eth,net,web3,debug,txpool --http.port=8545 --http.corsdomain=* --http.vhosts=* --ws --ws.addr=0.0.0.0 --ws.api=eth,net,web3,debug,txpool --ws.port=8546 --ws.origins=*
 
 
