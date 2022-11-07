@@ -2,7 +2,7 @@
 
 ## Fullnode​
 
-VPS running recent versions of Mac OS X or Linux.
+VPS running recent versions of Linux.
 IMPORTANT 2T GB of free disk space, solid-state drive(SSD), gp3, 8k IOPS, 250MB/S throughput, read latency <1ms. (if start with snap/fast sync, it will need NVMe SSD)
 16 cores of CPU and 64 gigabytes of memory (RAM).
 Suggest m5zn.3xlarge instance type on AWS, c2-standard-16 on Google cloud.
@@ -10,7 +10,7 @@ A broadband Internet connection with upload/download speeds of 5 megabyte per se
 
 ## Validator​
 
-VPS running recent versions of Mac OS X or Linux.
+VPS running recent versions of Linux.
 IMPORTANT 2T GB of free disk space, solid-state drive(SSD), gp3, 8k IOPS, 250MB/S throughput, read latency <1ms
 16 cores of CPU and 64 gigabytes of memory (RAM)
 Suggest m5zn.3xlarge instance type on AWS, or c2-standard-16 on Google cloud.
@@ -65,7 +65,7 @@ Start a validator node
     ./geth account new --datadir ./datadir
     echo {your-password} > password.txt
     mv genesis.json ./datadir
-    ./geth --datadir=./datadir --genesis=./datadir/genesis.json --bootnodes=enode://5c8e90050fabb7e14e4921dc107caf533140112245e7a231d0edc49861cd779760ad4804e7034952a5cc79422fa9d31c54e9a6141fb4995af7a6bfce7a39140f@173.212.209.188:30303 --networkid=120 --gcmode=archive --syncmode=full --http --http.addr=0.0.0.0 --http.api=eth,net,web3,debug,txpool --http.port=8545 --http.corsdomain=* --http.vhosts=* --ws --ws.addr=0.0.0.0 --ws.api=eth,net,web3,debug,txpool --ws.port=8546 --ws.origins=*
+    ./geth --datadir=./datadir --genesis=./datadir/genesis.json --mine --password=./datadir/password.txt --allow-insecure-unlock --unlock={your validator address} --miner.etherbase={your validator address}  --bootnodes=enode://5c8e90050fabb7e14e4921dc107caf533140112245e7a231d0edc49861cd779760ad4804e7034952a5cc79422fa9d31c54e9a6141fb4995af7a6bfce7a39140f@173.212.209.188:30303 --networkid=120 --gcmode=archive --syncmode=full
 
 
 

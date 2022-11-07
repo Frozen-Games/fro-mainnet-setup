@@ -4,3 +4,4 @@ blockscout/postgres-data/
 datadir/
 keystore/
 genesis/password.txt
+genesis/flattened
